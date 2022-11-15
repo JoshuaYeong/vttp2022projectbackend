@@ -79,11 +79,11 @@
 			<version>1.12.167</version>
 		</dependency>
 
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
 			<version>4.0.1</version>
-		</dependency> -->
+		</dependency>
 
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
