@@ -1,0 +1,24 @@
+name: Deploy on Release
+on:
+  push:
+    branches:
+    - release
+      # release:
+      #   types: [published]
+jobs:
+  deploy_to_heroku:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout src
+      uses: actions/checkout@v2
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v3.12.12 
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: vttp2022-finalproject
+        heroku_email: ${{ secrets.HEROKU_EMAIL }}
+        branch: ${{ github.ref_name }}
+      # env:
+      #   SPRING_DATASOURCE_USERNAME: ${{ secrets.spring_datasource_username }}
+      #   SPRING_DATASOURCE_PASSWORD: ${{ secrets.spring_datasource_password }}
+      #   SPRING_DATASOURCE_URL: ${{ secrets.spring_datasource_url }}
